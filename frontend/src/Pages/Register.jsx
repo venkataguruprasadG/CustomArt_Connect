@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
@@ -77,6 +78,11 @@ function Register() {
                 >
                     Register
                 </button>
+
+                <p>
+                    Already have an accout?
+                    <Link to="/login">Login</Link>
+                </p>
 
             </form>
 
