@@ -3,6 +3,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (

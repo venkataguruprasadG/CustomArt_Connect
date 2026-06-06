@@ -1,8 +1,9 @@
+import HeroSection from "../components/HeroSection";
 function Home() {
     return (
-        <div>
-            <h1>Welcome to the Home Page</h1>
-        </div>
+        <>
+            <HeroSection />
+        </>
     );
 }
 
