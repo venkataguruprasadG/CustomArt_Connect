@@ -1,0 +1,94 @@
+.artist-card {
+    width: 260px;
+
+    background-color: #d8f0f2;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Image */
+.artist-card img {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+}
+
+/* Artist Name */
+.artist-card h3 {
+    font-size: 1.3rem;
+
+    margin-bottom: 8px;
+
+    color: #222;
+}
+
+/* Specialization */
+.artist-card p {
+    font-size: 0.95rem;
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+    min-height: 50px;
+}
+
+/* Artwork Preview Section */
+.artwork-preview {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.artwork-preview img {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 8px;
+}
+
+/* Button */
+.artist-card button {
+    width: 100%;
+
+    padding: 10px;
+
+    background-color: #102027;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.artist-card button:hover {
+    background-color: #1f3b46;
+}
