@@ -1,3 +1,6 @@
+import React from "react";
+import "./ArtistCard.css";
+
 function ArtistCard(props) {
     return (
         <div className="artist-card">

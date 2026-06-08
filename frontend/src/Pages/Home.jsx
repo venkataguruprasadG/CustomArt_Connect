@@ -1,5 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import ArtistCard from "../components/ArtistCard";
+import "./Home.css";
 
 function Home() {
     const artists = [
@@ -28,16 +29,24 @@ function Home() {
         <>
             <HeroSection />
 
-            <div className="artist-container">
-                {artists.map(artist => (
-                    <ArtistCard
-                        key={artist.id}
-                        name={artist.name}
-                        description={artist.specialization}
-                        image={artist.image}
-                    />
-                ))}
-            </div>
+            <section className="featured-artists">
+
+                <h2>FEATURED ARTISTS</h2>
+
+                <div className="artist-container">
+
+                    {artists.map((artist) => (
+                        <ArtistCard
+                            key={artist.id}
+                            name={artist.name}
+                            specialization={artist.specialization}
+                            image={artist.image}
+                        />
+                    ))}
+
+                </div>
+
+            </section>
         </>
     );
 }
