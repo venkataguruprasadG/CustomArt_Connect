@@ -32,7 +32,7 @@ function Home() {
             id: 1,
             title: "Sunset Bliss",
             author: "Rahul Sharma",
-            price: "$500",
+            price: "500",
             image: "https://picsum.photos/300?4",
             alt: "Sunset bliss"
         },
@@ -40,7 +40,7 @@ function Home() {
             id: 2,
             title: "Portrait of a Lady",
             author: "Priya Reddy",
-            price: "$750",
+            price: "750",
             image: "https://picsum.photos/300?5",
             alt: "Portrait of a lady"
         },
