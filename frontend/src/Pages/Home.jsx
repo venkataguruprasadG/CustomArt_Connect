@@ -1,5 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import ArtistCard from "../components/ArtistCard";
+import FeaturedWorks from "../components/FeaturedWorks";
 import "./Home.css";
 
 function Home() {
@@ -25,6 +26,33 @@ function Home() {
             image: "https://picsum.photos/300?3"
         }
     ];
+
+    const works = [
+        {
+            id: 1,
+            title: "Sunset Bliss",
+            author: "Rahul Sharma",
+            price: "$500",
+            image: "https://picsum.photos/300?4",
+            alt: "Sunset bliss"
+        },
+        {
+            id: 2,
+            title: "Portrait of a Lady",
+            author: "Priya Reddy",
+            price: "$750",
+            image: "https://picsum.photos/300?5",
+            alt: "Portrait of a lady"
+        },
+        {
+            id: 3,
+            title: "Starry Night",
+            author: "Arjun Kumar",
+            price: "600",
+            image: "https://picsum.photos/300?6",
+            alt: "Starrt night"
+        }
+    ];
     return (
         <>
             <HeroSection />
@@ -46,6 +74,25 @@ function Home() {
 
                 </div>
 
+            </section>
+
+            <section className="featured-works">
+                <h2>RECENTLY ADDED MASTERPIECES</h2>
+
+                <div className="works-container">
+
+                    {works.map((work) => (
+                        <FeaturedWorks
+                            key={work.id}
+                            title={work.title}
+                            author={work.author}
+                            price={work.price}
+                            image={work.image}
+                            alt={work.alt}
+                        />
+                    ))}
+
+                </div>
             </section>
         </>
     );
