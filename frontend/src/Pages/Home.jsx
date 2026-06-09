@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import ArtistCard from "../components/ArtistCard";
 import FeaturedWorks from "../components/FeaturedWorks";
+import Footer from "../components/Footer";
 import "./Home.css";
 
 function Home() {
@@ -94,6 +95,8 @@ function Home() {
 
                 </div>
             </section>
+
+            <Footer />
         </>
     );
 }
