@@ -1,0 +1,62 @@
+.artists {
+    min-height: 100vh;
+    background-color: #10242b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artists-container {
+    width: 80%;
+    text-align: center;
+}
+
+.artists-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-box input {
+    width: 600px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 10px 0 0 10px;
+}
+
+.search-box button {
+    background-color: #c96b36;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    font-size: 1rem;
+}
+
+.filter-title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.filter-section select {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}

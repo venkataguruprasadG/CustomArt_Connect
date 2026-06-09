@@ -96,7 +96,6 @@ function Home() {
                 </div>
             </section>
 
-            <Footer />
         </>
     );
 }
