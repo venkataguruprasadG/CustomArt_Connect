@@ -1,5 +1,7 @@
 import "./Artists.css";
 import ArtistCard from "../../components/ArtistCard";
+import React from "react";
+import ArtistBackgroundPic from "../../assets/ArtistPageImageBackground.png";
 
 function Artists() {
     const artists = [
@@ -53,7 +55,9 @@ function Artists() {
     ];
     return (
         <>
-            <section className="artists">
+            <section className="artists"
+                style={{ backgroundImage: `url(${ArtistBackgroundPic})` }}
+            >
                 <div className="artists-header">
                     <h1 className="artists-title">
                         MEET OUR INSPIRING CREATORS
