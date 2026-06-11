@@ -1,9 +1,12 @@
 import "./Artists.css";
+import { useNavigate } from "react-router-dom";
 import ArtistCard from "../../components/ArtistCard";
 import React from "react";
 import ArtistBackgroundPic from "../../assets/ArtistPageImageBackground.png";
+import Footer from "../../components/Footer";
 
 function Artists() {
+    const navigate = useNavigate();
     const artists = [
         {
             id: 1,
@@ -53,6 +56,37 @@ function Artists() {
             image: "https://picsum.photos/300?4"
         }
     ];
+
+    const featuredArtists = [
+        {
+            id: 1,
+            name: "Mia Dubois",
+            medium: "Glassware",
+            image: "https://picsum.photos/200?11"
+        },
+
+        {
+            id: 2,
+            name: "Ben Carter",
+            medium: "Photography",
+            image: "https://picsum.photos/200?12"
+        },
+
+        {
+            id: 3,
+            name: "Anya Sharma",
+            medium: "Painting",
+            image: "https://picsum.photos/200?13"
+        },
+
+        {
+            id: 4,
+            name: "Lion Siame",
+            medium: "Glassware",
+            image: "https://picsum.photos/200?14"
+        }
+    ];
+
     return (
         <>
             <section className="artists"
@@ -104,6 +138,39 @@ function Artists() {
                     />
                 ))}
             </section>
+
+            <section className="meet-more-artists">
+                <h2>MEET MORE ARTISTS</h2>
+                <p>
+                    Browse our top medium artists
+                </p>
+                <div className="featured-artists-row">
+                    {featuredArtists.map(artist => (
+                        <div
+                            key={artist.id}
+                            className="featured-artist"
+                        >
+                            <img
+                                src={artist.image}
+                                alt={artist.name}
+                            />
+
+                            <h4>{artist.name}</h4>
+
+                            <p>{artist.medium}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <button
+                    className="shop-now-button"
+                    onClick={() => navigate("/shop")}
+                >
+                    Shop Now
+                </button>
+            </section>
+
+            <Footer />
         </>
     );
 }

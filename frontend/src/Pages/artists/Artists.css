@@ -90,3 +90,47 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
+
+.meet-more-artists {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.featured-artists-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.featured-artist img {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.featured-artist h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.featured-artist p {
+    color: gray;
+}
+
+.shop-now-btn {
+    background-color: #15252a;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
