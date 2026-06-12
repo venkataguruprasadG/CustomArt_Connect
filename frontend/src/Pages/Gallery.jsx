@@ -1,11 +1,15 @@
 import { useState } from "react";
 import GalleryHeader from "../components/GalleryHeader";
+import CartSidebar from "../components/CartSidebar"; // Import new cart component
 import "./Gallery.css";
 
 function Gallery() {
     const [sortOption, setSortOption] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [activeCategory, setActiveCategory] = useState("All");
+
+    // 1. Core State to hold items added to the cart
+    const [cart, setCart] = useState([]);
 
     const artworks = [
         {
@@ -14,7 +18,7 @@ function Gallery() {
             artist: "John Doe",
             price: 750,
             category: "Painting",
-            image: "https://picsum.photos/400/500?random=1" // Made taller for a sleek look
+            image: "https://picsum.photos/400/500?random=1"
         },
         {
             id: 2,
@@ -33,6 +37,21 @@ function Gallery() {
             image: "https://picsum.photos/400/600?random=3"
         }
     ];
+
+    // 2. Add item logic
+    const handleAddToCart = (artwork) => {
+        setCart([...cart, artwork]);
+    };
+
+    // 3. Remove item logic by its index (allows duplicates of same item ID)
+    const handleRemoveFromCart = (indexToRemove) => {
+        setCart(cart.filter((_, index) => index !== indexToRemove));
+    };
+
+    // 4. Checkout handler stub
+    const handleCheckout = () => {
+        alert(`Proceeding to checkout with ${cart.length} unique masterpiece(s)!`);
+    };
 
     const handleSortChange = (event) => {
         setSortOption(event.target.value);
@@ -81,33 +100,52 @@ function Gallery() {
                 </div>
             </div>
 
-            {/* Premium Art Grid */}
-            <div className="gallery-grid">
-                {filteredArtworks.map((art) => (
-                    <div key={art.id} className="gallery-card">
-                        <div className="card-image-wrapper">
-                            <img src={art.image} alt={art.title} />
-                            <span className="card-category-tag">{art.category}</span>
-                        </div>
-                        <div className="card-content">
-                            <div className="card-meta">
-                                <h4 className="art-title">{art.title}</h4>
-                                <p className="artist-name">by {art.artist}</p>
+            {/* Split Screen Container layout */}
+            <div className="gallery-main-layout">
+
+                {/* Left Side: Premium Art Grid */}
+                <div className="gallery-content-area">
+                    <div className="gallery-grid">
+                        {filteredArtworks.map((art) => (
+                            <div key={art.id} className="gallery-card">
+                                <div className="card-image-wrapper">
+                                    <img src={art.image} alt={art.title} />
+                                    <span className="card-category-tag">{art.category}</span>
+                                </div>
+                                <div className="card-content">
+                                    <div className="card-meta">
+                                        <h4 className="art-title">{art.title}</h4>
+                                        <p className="artist-name">by {art.artist}</p>
+                                    </div>
+                                    <div className="card-price-row">
+                                        <span className="art-price">${art.price}</span>
+                                    </div>
+                                    <div className="card-actions">
+                                        <button className="view-details-btn">View Info</button>
+                                        <button
+                                            className="add-to-cart-btn"
+                                            onClick={() => handleAddToCart(art)} // Linked button to handler
+                                        >
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="card-price-row">
-                                <span className="art-price">${art.price}</span>
-                            </div>
-                            <div className="card-actions">
-                                <button className="view-details-btn">View Info</button>
-                                <button className="add-to-cart-btn">Add to Cart</button>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                ))}
+                    {filteredArtworks.length === 0 && (
+                        <div className="no-results">No artworks found matching your criteria.</div>
+                    )}
+                </div>
+
+                {/* Right Side: Persistent Cart Sidebar Component */}
+                <CartSidebar
+                    cartItems={cart}
+                    onRemoveItem={handleRemoveFromCart}
+                    onCheckout={handleCheckout}
+                />
+
             </div>
-            {filteredArtworks.length === 0 && (
-                <div className="no-results">No artworks found matching your criteria.</div>
-            )}
         </div>
     );
 }
