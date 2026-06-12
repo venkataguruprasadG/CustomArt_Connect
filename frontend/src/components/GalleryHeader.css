@@ -1,0 +1,34 @@
+.gallery-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.gallery-header button {
+    padding: 8px 16px;
+
+    border: 1px solid #d6d0c5;
+    border-radius: 20px;
+
+    background-color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.gallery-header button:hover {
+    background-color: #e8e0d2;
+    transform: translateY(-2px);
+}

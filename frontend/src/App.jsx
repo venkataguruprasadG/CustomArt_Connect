@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import HeroSection from "./components/HeroSection";
 import Artists from "./Pages/artists/Artists";
 import Footer from "./components/Footer";
+import Gallery from "./Pages/Gallery";
 
 function App() {
   return (
@@ -39,6 +40,16 @@ function App() {
       <Route
         path="/artists"
         element={<> <Navbar /> <Artists /> </>}
+      />
+
+      <Route
+        path="/gallery"
+        element={
+          <>
+            <Navbar />
+            <Gallery />
+          </>
+        }
       />
     </Routes>
   );
