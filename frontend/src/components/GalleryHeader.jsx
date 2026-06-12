@@ -1,21 +1,19 @@
-import "./GalleryHeader.css"
+import "./GalleryHeader.css";
 
-function GalleryHeader() {
+function GalleryHeader({ activeCategory, setActiveCategory }) {
+    const categories = ["All", "Painting", "Sculpture", "Photography", "Digital Art"];
+
     return (
         <section className="gallery-header">
-            <h2>Category</h2>
-            <button className="Painting-btn">
-                Painting
-            </button>
-            <button className="Sculpture-btn">
-                Sculpture
-            </button>
-            <button className="Photography-btn">
-                Photography
-            </button>
-            <button className="Digital-Art-btn">
-                Digital Art
-            </button>
+            {categories.map((cat) => (
+                <button
+                    key={cat}
+                    className={`category-btn ${activeCategory === cat ? "active" : ""}`}
+                    onClick={() => setActiveCategory(cat)}
+                >
+                    {cat}
+                </button>
+            ))}
         </section>
     );
 }
